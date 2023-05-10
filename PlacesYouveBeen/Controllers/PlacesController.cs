@@ -1,16 +1,18 @@
 using PlacesYouveBeen.Models;
 using Microsoft.AspNetCore.Mvc;
 using System.Collections.Generic;
+using System;
 
 namespace PlacesYouveBeen.Controllers
 {
   public class PlacesController : Controller
   {
+    private static List<Place> _places = new List<Place> { };
+
     [HttpGet("/places")]
     public ActionResult Index()
     {
-      List<Place> allPlaces = Place.GetAll();
-      return View(allPlaces);
+      return View(_places);
     }
   [HttpGet("/places/new")]
     public ActionResult New()
@@ -18,22 +20,23 @@ namespace PlacesYouveBeen.Controllers
       return View();
     }
   [HttpPost("/places")]
-    public ActionResult Create(string cityName)
+    public ActionResult Create(string cityName, string date, string journal)
     {
-      Place myPlace = new Place(cityName);
+      Place myPlace = new Place(cityName, date, journal);
+      _places.Add(myPlace);
       return RedirectToAction("Index");
     }
 
   [HttpPost("/places/delete")]
   public ActionResult DeleteAll()
   {
-    Place.ClearAll();
-    return View();
+    _places.Clear();
+    return View("Index", _places);
   }
   [HttpGet("/places/{id}")]
     public ActionResult Show(int id)
     {
-      Place foundPlace = Place.Find(id);
+      Place foundPlace = _places.Find(place => place.Id == id);
       return View(foundPlace);
     }
 

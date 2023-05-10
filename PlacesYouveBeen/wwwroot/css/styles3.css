@@ -32,7 +32,7 @@ li {
 }
 
 li a {
-  color: #007BFF;
+  color: #ffffff;
   text-decoration: none;
   font-weight: bold;
 }
@@ -47,7 +47,7 @@ a {
   height: 50px;
   margin: 20px auto;
   background-color: #007BFF;
-  color: #fff;
+  color: #b19494;
   text-align: center;
   line-height: 50px;
   border-radius: 5px;

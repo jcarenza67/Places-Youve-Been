@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 
 namespace PlacesYouveBeen.Models
@@ -5,12 +6,16 @@ namespace PlacesYouveBeen.Models
   public class Place
   {
     public string CityName { get; set; }
+    public string Date { get; set; }
+    public string Journal { get; set; }
     public int Id { get; }
 
     private static  List<Place> _instances = new List<Place> { };  
-    public Place (string cityName)
+    public Place (string cityName, string date, string journal)
     {
       CityName = cityName;
+      Date = date;
+      Journal = journal;
       _instances.Add(this);
       Id = _instances.Count;   
     }
