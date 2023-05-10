@@ -20,9 +20,9 @@ namespace PlacesYouveBeen.Controllers
       return View();
     }
   [HttpPost("/places")]
-    public ActionResult Create(string cityName, string date, string journal)
+    public ActionResult Create(string cityName, string date, string journal, string friends)
     {
-      Place myPlace = new Place(cityName, date, journal);
+      Place myPlace = new Place(cityName, date, journal, friends);
       _places.Add(myPlace);
       return RedirectToAction("Index");
     }

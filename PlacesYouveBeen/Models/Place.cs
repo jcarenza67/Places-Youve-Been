@@ -9,15 +9,16 @@ namespace PlacesYouveBeen.Models
     public string Date { get; set; }
     public string Journal { get; set; }
     public int Id { get; }
-    // public string Friends { get; set; }
+    public string Friends { get; set; }
 
 
     private static  List<Place> _instances = new List<Place> { };  
-    public Place (string cityName, string date, string journal)
+    public Place (string cityName, string date, string journal, string friends)
     {
       CityName = cityName;
       Date = date;
       Journal = journal;
+      Friends = friends;
       _instances.Add(this);
       Id = _instances.Count;  
     }
