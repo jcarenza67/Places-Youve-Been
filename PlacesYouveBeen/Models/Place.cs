@@ -8,11 +8,10 @@ namespace PlacesYouveBeen.Models
     public int Id { get; }
 
     private static  List<Place> _instances = new List<Place> { };  
-    public Place(string cityName)
+    public Place (string cityName)
     {
       CityName = cityName;
       _instances.Add(this);
- 
       Id = _instances.Count;   
     }
 
