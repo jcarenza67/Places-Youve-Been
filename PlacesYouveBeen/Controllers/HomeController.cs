@@ -1,4 +1,3 @@
-using PlacesYouveBeen.Models;
 using Microsoft.AspNetCore.Mvc;
 
 namespace PlacesYouveBeen.Controllers
