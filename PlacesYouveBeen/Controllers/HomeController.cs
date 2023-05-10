@@ -1,12 +1,12 @@
-using ProjectName.Models;
+using PlacesYouveBeen.Models;
 using Microsoft.AspNetCore.Mvc;
 
-namespace ClassName.Controllers
+namespace PlacesYouveBeen.Controllers
 {
   public class HomeController : Controller
   {
     [HttpGet("/")]
-    public ActionResult MethodName()
+    public ActionResult Index()
     {
       return View();
     }
