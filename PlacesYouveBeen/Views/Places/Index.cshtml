@@ -22,7 +22,13 @@
     <ul>
       @foreach (Place place in Model)
       {
-        <li><a href='/places/@place.Id'>@place.CityName</a></li>
+        <li>
+          <a href='/places/@place.Id'>@place.CityName</a>
+          <form action="/places/@place.Id/delete" method="post">
+            <input type="hidden" name="id" value="@place.Id" />
+            <button type="submit" name="button">Delete</button>
+          </form>
+        </li>
       }
     </ul>
     <a href="/places/new">Add a new place.</a>

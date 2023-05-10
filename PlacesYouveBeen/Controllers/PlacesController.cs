@@ -28,7 +28,7 @@ namespace PlacesYouveBeen.Controllers
     }
 
   [HttpPost("/places/delete")]
-  public ActionResult DeleteAll()
+  public ActionResult Clear()
   {
     _places.Clear();
     return View("Index", _places);
@@ -38,6 +38,14 @@ namespace PlacesYouveBeen.Controllers
     {
       Place foundPlace = _places.Find(place => place.Id == id);
       return View(foundPlace);
+    }
+
+    [HttpPost("/places/{id}/delete")]
+    public ActionResult Delete(int id)
+    {
+      Place deletePlace = _places.Find(place => place.Id == id);
+      _places.Remove(deletePlace);
+      return RedirectToAction("Index");
     }
 
   }

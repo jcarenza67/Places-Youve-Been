@@ -18,6 +18,10 @@
       <p>@Model.Date</p>
       <p>@Model.Journal</p>
 
+      <form method="post" action="/places/@Model.Id/delete">
+        <button>Delete</button>
+      </form>
+
     <a href='/places/new'>Add another item</a>
     <a href='/places'>View all Places</a>
   </body>

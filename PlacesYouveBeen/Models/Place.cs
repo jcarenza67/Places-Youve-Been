@@ -9,6 +9,8 @@ namespace PlacesYouveBeen.Models
     public string Date { get; set; }
     public string Journal { get; set; }
     public int Id { get; }
+    // public string Friends { get; set; }
+
 
     private static  List<Place> _instances = new List<Place> { };  
     public Place (string cityName, string date, string journal)
@@ -17,7 +19,7 @@ namespace PlacesYouveBeen.Models
       Date = date;
       Journal = journal;
       _instances.Add(this);
-      Id = _instances.Count;   
+      Id = _instances.Count;  
     }
 
  
@@ -26,7 +28,7 @@ namespace PlacesYouveBeen.Models
       return _instances; 
     }
 
-    public static void ClearAll()
+    public static void Clear()
     {
       _instances.Clear();
     }
